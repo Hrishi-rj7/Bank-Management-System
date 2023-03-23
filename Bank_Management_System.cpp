@@ -41,7 +41,7 @@ void Account::ShowAcct()
 {
 	cout<<"\n\n\n\n\n\t\t\t\t\t\t"<<":: ACCOUNT DETAILS ::"<<"\n\n";
 	cout<<"\n\t\t\t\t\t"<<"Account No. : "<<AcctNo<<"\n";
-    cout<<"\n\t\t\t\t\t"<<"Account Holder Name : "<<AcctName<<"\n";
+        cout<<"\n\t\t\t\t\t"<<"Account Holder Name : "<<AcctName<<"\n";
 	cout<<"\n\t\t\t\t\t"<<"Type Of Account : "<<AcctType<<"\n";
 	cout<<"\n\t\t\t\t\t"<<"Balance Amount : "<<Deposit<<"\n";
 	cout<<"\n\t\t\t\t\t"<<"Account Created : "<<DateCreated<<"\n\n";
@@ -94,7 +94,7 @@ int main()
 	do
 	{
 	     system("cls");
-		 cout<<"\n\n\n\n\n\n\t\t\t\t\t"<<" ~~ "<<"  BANK MANAGEMENT SYSTEM  "<<" ~~ "<<"\n";
+             cout<<"\n\n\n\n\n\n\t\t\t\t\t"<<" ~~ "<<"  BANK MANAGEMENT SYSTEM  "<<" ~~ "<<"\n";
 	     cout<<"\n\t\t\t\t\t\t"<<" :: MAIN MENU :: "<<"\n";
 	     cout<<"\n\n\t\t\t\t\t"<<"1. NEW ACCOUNT. "<<"\n";
 	     cout<<"\t\t\t\t\t"<<"2. ACCOUNT INFO. "<<"\n";
@@ -103,7 +103,7 @@ int main()
 	     cout<<"\t\t\t\t\t"<<"5. BALANCE ENQUIRY.  "<<"\n";
 	     cout<<"\t\t\t\t\t"<<"6. ABOUT THIS PROJECT. "<<"\n";
 	     cout<<"\t\t\t\t\t"<<"7. EXIT. "<<"\n";
-         cout<<"\n\n\t\t\t\t\t"<<"Select your option (1-6): ";	
+             cout<<"\n\n\t\t\t\t\t"<<"Select your option (1-6): ";	
 	     cin>>ch;
 	   
 	     switch(ch)
