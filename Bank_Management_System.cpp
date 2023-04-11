@@ -218,5 +218,4 @@ int main(){
     while ((ch>=1 && ch<7)||(ch!=7));
 return 0;	
 }
-/* This program functions on creating one account at a time. In order to create multiple accounts at the same time,
-   we need to use .dat file. */
+/* This program functions on creating one account at a time. We can utilise .dat file to store information of multiple accounts. */
