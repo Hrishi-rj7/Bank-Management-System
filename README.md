@@ -1,2 +1,2 @@
-This is a simple code which can be used to demonstrate the idea used in banks to manage user profiles. Users can create, view profiles, deposit, withdraw money, and also perform a balance check.
+This is a simple code which can be used to demonstrate the idea used in banks to interact and manage user profiles. Users can create and view profiles, deposit and withdraw money, perform balance checks, and also encrypt the profile to ensure security.
 To more code-updates...
