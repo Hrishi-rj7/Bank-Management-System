@@ -1,9 +1,7 @@
 #include<iostream>
-#include<stdio.h>       //for gets()
-#include<stdlib.h>      //for system("cls")
+#include<bits/stdc++.h>
 using namespace std;
-class Account
-{
+class Account{
 private:
 	int AcctNo;
 	char AcctName[20];
@@ -20,8 +18,7 @@ public:
 	int Search(int);
 	int Verify(int);
 };
-void Account::CreateAcct()
-{
+void Account::CreateAcct(){
 	cout<<"\n\n\n\n\n\t\t\t\t\t"<<"Enter your account details here :"<<"\n\n";
 	cout<<"\n\t\t\t\t"<<"Enter your account no. :: ";
 	cin>>AcctNo;
@@ -37,17 +34,15 @@ void Account::CreateAcct()
 	cout<<"\n\t\t\t\t"<<"Set your user pin : ";
 	cin>>PinNo;
 }
-void Account::ShowAcct()
-{
+void Account::ShowAcct(){
 	cout<<"\n\n\n\n\n\t\t\t\t\t\t"<<":: ACCOUNT DETAILS ::"<<"\n\n";
 	cout<<"\n\t\t\t\t\t"<<"Account No. : "<<AcctNo<<"\n";
-        cout<<"\n\t\t\t\t\t"<<"Account Holder Name : "<<AcctName<<"\n";
+    cout<<"\n\t\t\t\t\t"<<"Account Holder Name : "<<AcctName<<"\n";
 	cout<<"\n\t\t\t\t\t"<<"Type Of Account : "<<AcctType<<"\n";
 	cout<<"\n\t\t\t\t\t"<<"Balance Amount : "<<Deposit<<"\n";
 	cout<<"\n\t\t\t\t\t"<<"Account Created : "<<DateCreated<<"\n\n";
 }
-void Account::DepositAmt()
-{
+void Account::DepositAmt(){
 	cout<<"\n\n\t\t\t\t\t"<<"TO DEPOSIT AMOUNT :"<<"\n";
 	cout<<"\n\t\t\t\t\t"<<"Enter the amount you want to deposit : ";
 	cin>>Amount;
@@ -55,46 +50,37 @@ void Account::DepositAmt()
 	cout<<"\n\n\t\t\t\t\t"<<"Record Updated!"<<"\n\n";
 	cout<<"\n\t\t\t\t\t\t\t\t\t\t\t"<<"Press enter to continue...";
 }
-void Account::WithdrawAmt()
-{
+void Account::WithdrawAmt(){
 	cout<<"\n\n\t\t\t\t\t"<<"TO WITHDRAW AMOUNT :"<<"\n";
 	cout<<"\n\t\t\t\t\t"<<"Enter the amount you want to withdraw : ";
 	cin>>Amount;
-	{
-	    if (Amount<=Deposit)
-	        Deposit =  Deposit - Amount;
-	    else
-	        cout<<"\n\t\t\t\t\t"<<"Less balance in your account...";
-	}
+	if (Amount<=Deposit)
+	    Deposit =  Deposit - Amount;
+	else
+	    cout<<"\n\t\t\t\t\t"<<"Less balance in your account...";
 	cout<<"\n\n\t\t\t\t\t"<<"Record Updated!"<<"\n\n";
 	cout<<"\n\t\t\t\t\t\t\t\t\t\t\t"<<"Press enter to continue...";	
 }
-int Account::Search(int a)
-{
-	if (AcctNo==a)
-	{
+int Account::Search(int a){
+	if (AcctNo==a){
 	    ShowAcct();
 		return(1);
 	}
 	return 0;
 }
-int Account::Verify(int b)
-{
-	if(PinNo==b)
-	{
+int Account::Verify(int b){
+	if (PinNo==b){
 		return(1);
 	}
 	return 0;
 }
-int main()
-{
+int main(){
 	Account K;
 	int ch,a,p,found,match;
 	
-	do
-	{
+	do{
 	     system("cls");
-             cout<<"\n\n\n\n\n\n\t\t\t\t\t"<<" ~~ "<<"  BANK MANAGEMENT SYSTEM  "<<" ~~ "<<"\n";
+		 cout<<"\n\n\n\n\n\n\t\t\t\t\t"<<" ~~ "<<"  BANK MANAGEMENT SYSTEM  "<<" ~~ "<<"\n";
 	     cout<<"\n\t\t\t\t\t\t"<<" :: MAIN MENU :: "<<"\n";
 	     cout<<"\n\n\t\t\t\t\t"<<"1. NEW ACCOUNT. "<<"\n";
 	     cout<<"\t\t\t\t\t"<<"2. ACCOUNT INFO. "<<"\n";
@@ -103,11 +89,10 @@ int main()
 	     cout<<"\t\t\t\t\t"<<"5. BALANCE ENQUIRY.  "<<"\n";
 	     cout<<"\t\t\t\t\t"<<"6. ABOUT THIS PROJECT. "<<"\n";
 	     cout<<"\t\t\t\t\t"<<"7. EXIT. "<<"\n";
-             cout<<"\n\n\t\t\t\t\t"<<"Select your option (1-6): ";	
+         cout<<"\n\n\t\t\t\t\t"<<"Select your option (1-6): ";	
 	     cin>>ch;
 	   
-	     switch(ch)
-	     {
+	     switch(ch){
 	   	    case 1://creating an user account
 	   	        system("cls");
 	   	        K.CreateAcct();
@@ -120,37 +105,33 @@ int main()
 	   	    	system("cls");
 	   	    	cout<<"\n\n\n\n\n\t\t\t\t"<<"Enter the account no. whose details is reqd. : ";
 	   	    	cin>>a;
-	   	    	cout<<"\n\n\t\t\t\t"<<"Please verify your password : ";
+	   	    	cout<<"\n\n\t\t\t\t"<<"Please verify your pin : ";
 	   	    	cin>>p;
 	   	    	match=K.Verify(p);
-	   	    	if(match==1)
-	   	    	{
+	   	    	if (match==1){
 	   	    	    system("cls");
 	   	    	    found=K.Search(a);
-				   	    if(found==0)
+				   	    if (found==0)
 	   	    		        cout<<"\n\n\n\t\t\t\t\t\t"<<"RECORD  NOT  FOUND!"<<"\n\n";
 	   	    		        cout<<"\n\t\t\t\t\t\t\t\t\t\t\t"<<"Press enter to continue...";
 	   	        }
-	   	        else
-	   	        {
+	   	        else{
 	   	            cout<<"\n\n\n\n\t\t\t\t\t\t"<<"Wrong pin no. entered!"<<"\n\n";
-	   	            cout<<"\n\t\t\t\t\t\t\t\t\t\t\t"<<"Press enter to retry...";
+	   	            cout<<"\n\n\t\t\t\t\t\t\t\t\t\t\t"<<"Press enter to retry...";
 	   	        }
 	   	        break;
 	   	    	
 	   	    case 3://deposition of money
 	   	    	system("cls");
-	   	    	cout<<"\n\n\n\n\n\t\t\t\t"<<"Enter the account no. to deposit money : ";
+	   	    	cout<<"\n\n\n\n\t\t\t\t"<<"Enter the account no. to deposit money : ";
 	   	    	cin>>a;
-	   	    	cout<<""<<"Please verify your password : ";
+	   	    	cout<<"\n\n\t\t\t\t"<<"Please verify your pin : ";
 	   	    	cin>>p;
 	   	    	match=K.Verify(p);
-	   	    	if(match==1)
-	   	    	{
+	   	    	if (match==1){
 	   	    	    system("cls");
 	   	    	    found=K.Search(a);
-	   	    	        if (found==1)
-	   	    		    {
+	   	    	        if (found==1){
 	   	    		    	K.DepositAmt();
 	   	    		    	break;
 	   	    		    }
@@ -158,26 +139,23 @@ int main()
 	   	    		        cout<<"\n\n\n\t\t\t\t\t\t"<<"RECORD  NOT  FOUND!"<<"\n\n";
 	   	    		        cout<<"\n\t\t\t\t\t\t\t\t\t\t\t"<<"Press enter to continue...";
 	   	        }
-	   	        else
-	   	        {
+	   	        else{
 	   	            cout<<"\n\n\n\n\t\t\t\t\t\t"<<"Wrong pin no. entered!"<<"\n\n";
-	   	            cout<<"\n\t\t\t\t\t\t\t\t\t\t\t"<<"Press enter to retry...";
+	   	            cout<<"\n\n\t\t\t\t\t\t\t\t\t\t\t"<<"Press enter to retry...";
 	   	        }
 	   	    	break;
 	   	    	
 	   	    case 4://withdrawal of money
 	   	    	system("cls");
-	   	    	cout<<"\n\n\n\n\n\t\t\t\t"<<"Enter the account no. to withdraw money from : ";
+	   	    	cout<<"\n\n\n\n\t\t\t\t"<<"Enter the account no. to withdraw money from : ";
 	   	    	cin>>a;
-	   	    	cout<<""<<"Please verify your password : ";
+	   	    	cout<<"\n\n\t\t\t\t"<<"Please verify your pin : ";
 	   	    	cin>>p;
 	   	    	match=K.Verify(p);
-	   	    	if(match==1)
-	   	    	{
+	   	    	if (match==1){
 	   	            system("cls");
 	   	    	    found=K.Search(a);
-	   	    	        if (found==1)
-	   	    	        {
+	   	    	        if (found==1){
 	   	    	        	K.WithdrawAmt();
 	   	    	        	break;
 	   	    	        }
@@ -185,45 +163,41 @@ int main()
 	   	    	            cout<<"\n\n\n\t\t\t\t\t\t"<<"RECORD  NOT  FOUND!"<<"\n\n";
 	   	    	            cout<<"\n\t\t\t\t\t\t\t\t\t\t\t"<<"Press enter to continue...";
 	   	        }
-	   	        else
-	   	        {
+	   	        else{
 	   	            cout<<"\n\n\n\n\t\t\t\t\t\t"<<"Wrong pin no. entered!"<<"\n\n";
-	   	            cout<<"\n\t\t\t\t\t\t\t\t\t\t\t"<<"Press enter to retry...";
+	   	            cout<<"\n\n\t\t\t\t\t\t\t\t\t\t\t"<<"Press enter to retry...";
 	   	        }
 	   	    	break;
 	   	    	
 	   	    case 5://enquiry of current balance
 	   	    	system("cls");
-	   	    	cout<<"\n\n\n\n\n\t\t\t"<<"Enter the account number whose current balance is required : ";
+	   	    	cout<<"\n\n\n\n\t\t\t\t"<<"Enter the account number whose current balance is required : ";
 	   	    	cin>>a;
-	   	    	cout<<""<<"Please verify your password : ";
+	   	    	cout<<"\n\n\t\t\t\t"<<"Please verify your pin : ";
 	   	    	cin>>p;
 	   	    	match=K.Verify(p);
-	   	    	if(match==1)
-	   	    	{
+	   	    	if (match==1){
 	   	            system("cls");
 	   	    	    found=K.Search(a);
-	   	    	        if (found==1)
-	   	    	        {
+	   	    	        if (found==1){
 	   	    	    	    cout<<"\n\t\t\t\t\t\t\t\t\t\t\t"<<"Press enter to continue...";
 	   	    	    	    break;
 	   	    	        }
-	   	    	        else if (found==0)
-	   	    	            cout<<"\n\n\n\t\t\t\t\t\t\t"<<"RECORD  NOT  FOUND!"<<"\n\n";
+	   	    	        if (found==0)
+	   	    	            cout<<"\n\n\n\t\t\t\t\t\t"<<"RECORD  NOT  FOUND!"<<"\n\n";
 	   	    	            cout<<"\n\t\t\t\t\t\t\t\t\t\t\t"<<"Press enter to continue...";
 	   	    	}
-	   	    	else
-	   	        {
+	   	    	else{
 	   	            cout<<"\n\n\n\n\t\t\t\t\t\t"<<"Wrong pin no. entered!"<<"\n\n";
-	   	            cout<<"\n\t\t\t\t\t\t\t\t\t\t\t"<<"Press enter to retry...";
-	   	        }        
+	   	            cout<<"\n\n\t\t\t\t\t\t\t\t\t\t\t"<<"Press enter to retry...";
+			    }
 	   	    	break;
 	   	    	
 	   	    case 6://concept idea of the project
 	   	        system("cls");
 	   	        cout<<"\n\n\n\n\n\n\n\n\t\t\t\t\t\t"<<": ABOUT THIS PROJECT :";
-	   	        cout<<"\n\n\n\n\t\t\t"<<"This program has been coded on the ideology of the Banking Management System.";
-	   	        cout<<"\n\n\t\t\t"<<"It basically highlights the computing methods used by the Managing Director.";
+	   	        cout<<"\n\n\n\n\t\t\t"<<"This program has been developed on the ideology of the Banking Management System.";
+	   	        cout<<"\n\n\t\t\t"<<"It provides an user interacting interface to deal with user accounts.";
 	   	        break;
 	   	    	
 	   	    case 7://exiting the program
@@ -244,3 +218,5 @@ int main()
     while ((ch>=1 && ch<7)||(ch!=7));
 return 0;	
 }
+/* This program functions on creating one account at a time. In order to create multiple accounts at the same time,
+   we need to use .dat file. */
