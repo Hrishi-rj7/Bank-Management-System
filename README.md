@@ -33,15 +33,3 @@ Welcome to the **Bank Management System** project! This C++ program simulates ba
 ## 🌟 Project Insight
 
 This project is designed to mimic real-life banking operations. It's a great starting point for understanding how banking systems work and how user accounts are managed in software.
-
-## 🤝 Contributions
-
-Contributions are welcome! Feel free to fork this repository and submit a pull request.
-
-## 📄 License
-
-This project is open-source and available under the [MIT License](LICENSE).
-
-## 📞 Contact
-
-For any questions or suggestions, feel free to contact me at hrishiraj.modi.12b.399@gmail.com.
